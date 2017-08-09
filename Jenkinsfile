@@ -8,9 +8,18 @@ pipeline {
     }
     stage('advedt') {
       steps {
-        echo 'hello again'
-        echo 'ggggg'
-        echo 'ggsdgsgd'
+        parallel(
+          "advedt": {
+            echo 'hello again'
+            echo 'ggggg'
+            echo 'ggsdgsgd'
+            
+          },
+          "": {
+            echo 'Foobar'
+            
+          }
+        )
       }
     }
     stage('Foo') {
