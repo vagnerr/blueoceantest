@@ -9,6 +9,8 @@ pipeline {
     stage('advedt') {
       steps {
         echo 'hello again'
+        echo 'ggggg'
+        echo 'ggsdgsgd'
       }
     }
     stage('Foo') {
@@ -18,6 +20,7 @@ pipeline {
           sh 'du -sh'
         }
         
+        input(message: 'We are pausing', id: '1', ok: 'Go for it')
       }
     }
     stage('done') {
